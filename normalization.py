@@ -8,7 +8,7 @@ def normalize(string):
     string = re.sub('Section::::', '', string)
     #pattern = '(' + '|'.join(puctuation) + ')'
     string = re.sub(r'("|\')', '', string)
-    string = re.sub(r'(\,|\.|;|\?|!|:)', r' \1 ', string)
+    string = re.sub(r'(\,|\.|;|\?|!|:)(\s|$)', r' \1\2', string)
     string = re.sub(r'(\)|\}|\])', r' \1 ', string)
     string = re.sub(r'(\(|\{|\[)', r' \1 ', string)
     string = re.sub(r'\s+', ' ', string)
